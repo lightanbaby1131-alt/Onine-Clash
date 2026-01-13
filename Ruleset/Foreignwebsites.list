@@ -1,0 +1,13 @@
+# 国外网站补充
+# 时间：2026年1月13日
+# 规则：2条
+
+
+# 域名后缀匹配
+DOMAIN-SUFFIX,getzlib.com
+
+
+# 域名关键字匹配
+DOMAIN-KEYWORD,z-library
+
+
