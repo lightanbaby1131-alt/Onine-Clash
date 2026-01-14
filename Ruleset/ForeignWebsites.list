@@ -1,0 +1,53 @@
+# 国外网站补充
+# 时间：2026年1月13日
+
+# z-library
+# 数量：2条
+DOMAIN-SUFFIX,getzlib.com
+DOMAIN-KEYWORD,z-library
+
+#  JetBrains 
+# 数量：11条
+DOMAIN-SUFFIX,intellij.com
+DOMAIN-SUFFIX,intellij.net
+DOMAIN-SUFFIX,intellij.org
+DOMAIN-SUFFIX,jetbrains.org
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,jetbrains.net
+DOMAIN-SUFFIX,jetbrains.space
+DOMAIN-SUFFIX,jetbrains.team
+DOMAIN-SUFFIX,datalore.io
+DOMAIN-SUFFIX,kotlinlang.org
+DOMAIN-SUFFIX,kotlinconf.com
+
+#  JetBrains AI
+# 数量：3条
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-SUFFIX,jetbrains.ai
+DOMAIN-SUFFIX,grazie.aws.intellij.net
+
+# Python官网
+# 数量：6条
+DOMAIN-SUFFIX,pycon.org
+DOMAIN-SUFFIX,pypa.io
+DOMAIN-SUFFIX,pypi.io
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,python.org
+DOMAIN-SUFFIX,pythonhosted.org
+
+# 内容：Wikipedia 维基相关域名
+# 数量：12条
+DOMAIN-SUFFIX,mediawiki.org
+DOMAIN-SUFFIX,wikibooks.org
+DOMAIN-SUFFIX,wikidata.org
+DOMAIN-SUFFIX,wikileaks.org
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,wikinews.org
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,wikiquote.org
+DOMAIN-SUFFIX,wikisource.org
+DOMAIN-SUFFIX,wikiversity.org
+DOMAIN-SUFFIX,wikivoyage.org
+DOMAIN-SUFFIX,wiktionary.org
+
+
