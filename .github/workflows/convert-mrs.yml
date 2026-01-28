@@ -2,17 +2,17 @@ name: Convert LIST to MRS
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 每天 00:00 自动运行
-  workflow_dispatch:       # 手动触发
+    - cron: "0 0 * * *"
+  workflow_dispatch:
   push:
     paths:
-      - "Rule/temp/*.list"   # 当 .list 文件更新时自动触发
+      - "Rule/temp/*.list"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # 允许写入仓库（删除旧文件、提交新文件）
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -25,17 +25,39 @@ jobs:
 
       - name: Clean old MRS files
         run: |
-          echo "Cleaning old .mrs files..."
           rm -f Rule/mrs/*.mrs || true
 
-      - name: Download latest Mihomo v3-go120 binary
+      - name: Download latest Mihomo (with fallback)
         run: |
-          LATEST_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+          API_JSON=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest)
+
+          # 1. Try v3-go120
+          LATEST_URL=$(echo "$API_JSON" \
             | grep "browser_download_url" \
             | grep "linux-amd64-v3-go120" \
             | grep ".gz" \
             | head -n 1 \
             | cut -d '"' -f 4)
+
+          # 2. Try v3-go123
+          if [ -z "$LATEST_URL" ]; then
+            LATEST_URL=$(echo "$API_JSON" \
+              | grep "browser_download_url" \
+              | grep "linux-amd64-v3-go123" \
+              | grep ".gz" \
+              | head -n 1 \
+              | cut -d '"' -f 4)
+          fi
+
+          # 3. Try any v3
+          if [ -z "$LATEST_URL" ]; then
+            LATEST_URL=$(echo "$API_JSON" \
+              | grep "browser_download_url" \
+              | grep "linux-amd64-v3" \
+              | grep ".gz" \
+              | head -n 1 \
+              | cut -d '"' -f 4)
+          fi
 
           echo "Downloading Mihomo from: $LATEST_URL"
           wget -O .github/temp/mihomo.gz "$LATEST_URL"
