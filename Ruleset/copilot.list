@@ -1,0 +1,40 @@
+# Copilot 专用分流
+
+# Copilot 主域名
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,bingcopilot.microsoft.com
+DOMAIN-SUFFIX,copilotcdn.microsoft.com
+DOMAIN-SUFFIX,copilot.azureedge.net
+
+# Copilot for Edge（浏览器侧）
+DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-SUFFIX,edge.microsoft.com
+DOMAIN-SUFFIX,api.msn.com
+
+# Copilot for Windows（系统侧）
+DOMAIN-SUFFIX,windowscopilot.microsoft.com
+DOMAIN-SUFFIX,windows.msn.com
+DOMAIN-SUFFIX,widget.windows.com
+
+# Copilot 插件 / 扩展 / API
+DOMAIN-SUFFIX,plugins.copilot.microsoft.com
+DOMAIN-SUFFIX,pluginhub.microsoft.com
+DOMAIN-SUFFIX,api.copilot.microsoft.com
+DOMAIN-SUFFIX,assets.copilot.microsoft.com
+
+# Copilot Studio / 企业版
+DOMAIN-SUFFIX,ai.azure.com
+DOMAIN-SUFFIX,azurefd.net
+DOMAIN-SUFFIX,azure-api.net
+
+# Copilot 必要依赖（微软通用服务）
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msidentity.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office365.com
+DOMAIN-SUFFIX,msedge.net
+
+
+
