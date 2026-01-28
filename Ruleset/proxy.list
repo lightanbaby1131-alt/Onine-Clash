@@ -1,0 +1,31 @@
+#全球常见的 公共 DNS 服务
+
+# 代理补充列表
+
+# 域名后缀匹配
+DOMAIN-SUFFIX,qichiyu.com   # 个人或自定义域名示例
+
+# 域名关键字匹配
+DOMAIN-KEYWORD,1e100        # Google 内部服务域名关键字（如 gstatic、Google 基础设施）
+
+# 国外DNS
+DOMAIN-SUFFIX,dns.google                     # Google 公共 DNS DoH/DoT 域名
+DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com   # Cloudflare 公共 DNS DoH 域名
+DOMAIN-SUFFIX,dot.sb                         # DNS.SB 公共 DNS 服务
+DOMAIN-SUFFIX,dns.umbrella.com               # Cisco Umbrella (原 OpenDNS) 公共 DNS
+DOMAIN-SUFFIX,dns.quad9.net                  # Quad9 公共 DNS
+DOMAIN-SUFFIX,dns.google                     # Google 公共 DNS（重复一条）
+DOMAIN-SUFFIX,cloudflare-dns.com             # Cloudflare 公共 DNS DoH 域名
+DOMAIN-SUFFIX,doh.dns.sb                     # DNS.SB 公共 DNS DoH 域名
+DOMAIN-SUFFIX,doh.opendns.com                # Cisco OpenDNS DoH 域名
+DOMAIN-SUFFIX,dns.quad9.net                  # Quad9 公共 DNS（重复一条）
+DOMAIN-SUFFIX,hk-hkg.doh.sb                  # DNS.SB 香港节点 DoH 域名
+
+# 国外公共 DNS IP
+IP-CIDR,8.8.8.8/32,no-resolve                # Google 公共 DNS 主地址
+IP-CIDR,8.8.4.4/32,no-resolve                # Google 公共 DNS 备用地址
+IP-CIDR,1.1.1.1/32,no-resolve                # Cloudflare 公共 DNS 主地址
+IP-CIDR,1.0.0.1/32,no-resolve                # Cloudflare 公共 DNS 备用地址
+IP-CIDR,185.222.222.222/32,no-resolve        # Quad9 公共 DNS 主地址
+IP-CIDR,208.67.222.222/32,no-resolve         # Cisco Umbrella (OpenDNS) 主地址
+IP-CIDR,208.67.220.220/32,no-resolve         # Cisco Umbrella (OpenDNS) 备用地址
