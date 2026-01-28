@@ -1,18 +1,18 @@
-name: Convert list to mrs
+name: Convert LIST to MRS
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 每天 00:00 自动运行
-  workflow_dispatch:       # 手动触发
+    - cron: "0 0 * * *"
+  workflow_dispatch:
   push:
     paths:
-      - "Rule/temp/*.list"   # 当 .list 文件更新时自动触发
+      - "Rule/temp/*.list"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # 允许写入仓库（删除旧文件、提交新文件）
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -28,9 +28,14 @@ jobs:
           echo "Cleaning old .mrs files..."
           rm -f Rule/mrs/*.mrs || true
 
-      - name: Download Mihomo core
+      - name: Download latest Mihomo core
         run: |
-          wget -O .github/temp/mihomo https://github.com/MetaCubeX/mihomo/releases/latest/download/mihomo-linux-amd64
+          LATEST_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | grep "browser_download_url" \
+            | grep "linux-amd64" \
+            | cut -d '"' -f 4)
+          echo "Downloading: $LATEST_URL"
+          wget -O .github/temp/mihomo "$LATEST_URL"
           chmod +x .github/temp/mihomo
 
       - name: Convert all .list to .mrs
