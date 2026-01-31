@@ -1,0 +1,33 @@
+name: Generate SocialMedia List
+
+on:
+  schedule:
+    - cron: '10 18 * * *'   # 每天 UTC 时间 18:10，对应中国时间 02:10
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script
+        run: python scripts/generate_socialmedia_list.py
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: socialmedia-list
+          path: |
+            .github/tmp/*
+            Rule/list/SocialMedia.list
